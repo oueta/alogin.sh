@@ -87,11 +87,15 @@ if {$host_index > -1} {
                                     puts "Connecting $host_arg via telnet using \"$host_tpl\" template"
                                     spawn telnet -l $user $host_arg $port
                                     expect {
-                                        "?assword*" {
-                                            send "$passwd\n"
-                                            interact
-                                            exit 0;
-                                        }
+                                            "?ser*" {
+                                                send "$user\n"
+                                                exp_continue
+                                            }
+                                            "?assword*" {
+                                                send "$passwd\n"
+                                                interact
+                                                exit 0;
+                                            }
                                     }
                          }
             }
