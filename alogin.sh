@@ -4,7 +4,7 @@ if {[llength $argv] < 1} {
     exit 1;
 }
 set host_arg [lindex $argv 0]
-set config_file [open "alogin.conf"]
+set config_file [open "[file dirname [file normalize [info script]]]/alogin.conf"]
 set config_items [split [read $config_file] "\n"]
 close $config_file
 set host_index -1

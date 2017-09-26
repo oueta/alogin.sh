@@ -1,6 +1,7 @@
 ## alogin.sh
 
 ## Requirements
+/bin/bash
 /usr/bin/expect
 
 ## Usage
