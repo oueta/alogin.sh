@@ -91,6 +91,10 @@ if {$host_index > -1} {
                                                 send "$user\n"
                                                 exp_continue
                                             }
+                                            "?ogin*" {
+                                                send "$user\n"
+                                                exp_continue
+                                            }
                                             "?assword*" {
                                                 send "$passwd\n"
                                                 interact
